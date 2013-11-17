@@ -13,11 +13,12 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        String rootDir = args[0];
+        int N = Integer.parseInt(args[0]);
+        String rootDir = args[1];
         if (!rootDir.endsWith("/"))
             rootDir = rootDir + "/";
 
-        for (int arg = 1; arg < args.length; arg++) {
+        for (int arg = 2; arg < args.length; arg++) {
 
             File[] composer = new File(rootDir + args[arg]).listFiles(new FileFilter() {
                 @Override
@@ -26,7 +27,7 @@ public class Main {
                 }
             });
             for (File f : composer) {
-                double[] noteMatrix = noteMatrixFromMidi(f, 2);
+                double[] noteMatrix = noteMatrixFromMidi(f, N);
 
                 for (int i = 0; i < noteMatrix.length; i++) {
                     System.out.print(noteMatrix[i] + ",");
