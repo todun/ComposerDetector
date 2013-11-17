@@ -7,6 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jlayer-1.0.1-1-javadoc" level="project" />
+    <orderEntry type="library" name="jfugue-4.0.3-with-musicxml" level="project" />
+    <orderEntry type="library" name="nz.ac.waikato.cms.weka:weka-stable:3.6.10" level="project" />
   </component>
 </module>
 
