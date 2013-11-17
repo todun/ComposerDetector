@@ -13,22 +13,26 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        File[] beethoven = new File("/home/john/composers/beethoven").listFiles(new FileFilter() {
-            @Override
-            public boolean accept(File pathName) {
-                return pathName.toString().endsWith("mid");
-            }
-        });
-        for (File f : beethoven) {
-            double[] noteMatrix = noteMatrixFromMidi(f, 2);
+        String rootDir = args[0];
+        if (!rootDir.endsWith("/"))
+            rootDir = rootDir + "/";
 
-            double sum = 0;
-            for (int i = 0; i < noteMatrix.length; i++){
-                System.out.print(noteMatrix[i] + ",");
-                sum += noteMatrix[i];
+        for (int arg = 1; arg < args.length; arg++) {
+
+            File[] composer = new File(rootDir + args[arg]).listFiles(new FileFilter() {
+                @Override
+                public boolean accept(File pathName) {
+                    return pathName.toString().endsWith("mid");
+                }
+            });
+            for (File f : composer) {
+                double[] noteMatrix = noteMatrixFromMidi(f, 2);
+
+                for (int i = 0; i < noteMatrix.length; i++) {
+                    System.out.print(noteMatrix[i] + ",");
+                }
+                System.out.println(args[arg]);
             }
-            System.out.println("beethoven");
-            System.out.println(sum);
         }
     }
 
@@ -39,21 +43,22 @@ public class Main {
 
         Sequence sequence = MidiSystem.getSequence(f);
 
-        track: for (Track track : sequence.getTracks()) {
-            for (int i = 0; i < track.size() - (N - 1);) {
+        track:
+        for (Track track : sequence.getTracks()) {
+            for (int i = 0; i < track.size() - (N - 1); ) {
 
                 int[] notes = new int[N];
 
                 int count = 0;
                 int found = -1;
                 for (int j = 0; count < notes.length && i + j < track.size(); j++) {
-                    MidiEvent e = track.get(i+j);
+                    MidiEvent e = track.get(i + j);
                     MidiMessage m = e.getMessage();
                     if (m instanceof ShortMessage) {
                         ShortMessage sm = (ShortMessage) m;
                         //note is on and velocity is not 0 (some assholes use 0 velocity to indicate note-off)
                         if (sm.getCommand() == NOTE_ON && sm.getData2() != 0) {
-                            if(found < 0)
+                            if (found < 0)
                                 found = j;
                             notes[count++] = sm.getData1() % 12;
                         }
@@ -61,13 +66,13 @@ public class Main {
                     }
                 }
 
-                if(found < 0)
+                if (found < 0)
                     continue track;
-                i+=found+1;
+                i += found + 1;
 
                 int vectorPosition = 0;
-                for(int j = 0; j < notes.length; j++){
-                    vectorPosition += notes[j] * Math.pow(12,j);
+                for (int j = 0; j < notes.length; j++) {
+                    vectorPosition += notes[j] * Math.pow(12, j);
                 }
                 noteFrequency[vectorPosition]++;
                 noteCount += notes.length;
@@ -75,7 +80,7 @@ public class Main {
         }
 
         for (int i = 0; i < noteFrequency.length; i++)
-            noteFrequency[i] /= noteCount/2;
+            noteFrequency[i] /= noteCount / 2;
 
         return noteFrequency;
     }
