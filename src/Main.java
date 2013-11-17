@@ -9,6 +9,7 @@ import java.io.FileFilter;
  */
 public class Main {
     private static final int NOTE_ON = 0x90;
+    private static final int CLOCK = 24;
 
 
     public static void main(String[] args) throws Exception {
@@ -16,7 +17,7 @@ public class Main {
         int N = Integer.parseInt(args[0]);
 
         System.out.println("@RELATION composer");
-        for(int i = 0; i < Math.pow(12,N); i++)
+        for(int i = 0; i < Math.pow(CLOCK,N); i++)
             System.out.println("@ATTRIBUTE a"+i+" REAL");
         System.out.print("@ATTRIBUTE class {");
         for(int i = 2; i < args.length-1; i++)
@@ -51,7 +52,7 @@ public class Main {
     private static double[] noteMatrixFromMidi(File f, int N) throws Exception {
 
         long noteCount = 0;
-        double[] noteFrequency = new double[(int) Math.pow(12, N)];
+        double[] noteFrequency = new double[(int) Math.pow(CLOCK, N)];
 
         Sequence sequence = MidiSystem.getSequence(f);
 
@@ -72,7 +73,7 @@ public class Main {
                         if (sm.getCommand() == NOTE_ON && sm.getData2() != 0) {
                             if (found < 0)
                                 found = j;
-                            notes[count++] = sm.getData1() % 12;
+                            notes[count++] = sm.getData1() % CLOCK;
                         }
 
                     }
@@ -84,7 +85,7 @@ public class Main {
 
                 int vectorPosition = 0;
                 for (int j = 0; j < notes.length; j++) {
-                    vectorPosition += notes[j] * Math.pow(12, j);
+                    vectorPosition += notes[j] * Math.pow(CLOCK, j);
                 }
                 noteFrequency[vectorPosition]++;
                 noteCount += notes.length;
