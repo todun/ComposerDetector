@@ -14,6 +14,17 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         int N = Integer.parseInt(args[0]);
+
+        System.out.println("@RELATION composer");
+        for(int i = 0; i < Math.pow(12,N); i++)
+            System.out.println("@ATTRIBUTE a"+i+" REAL");
+        System.out.print("@ATTRIBUTE class {");
+        for(int i = 2; i < args.length-1; i++)
+            System.out.print(args[i]+",");
+        System.out.println(args[args.length-1]+"}");
+
+        System.out.println("@DATA");
+
         String rootDir = args[1];
         if (!rootDir.endsWith("/"))
             rootDir = rootDir + "/";
@@ -81,7 +92,7 @@ public class Main {
         }
 
         for (int i = 0; i < noteFrequency.length; i++)
-            noteFrequency[i] /= noteCount / 2;
+            noteFrequency[i] /= (noteCount / N);
 
         return noteFrequency;
     }
