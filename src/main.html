@@ -8,7 +8,6 @@
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript" src="./web_dev/js/bootstrap.js"></script>
 		
-
 		<title>HackDuke project</title>
 
 	</head>
@@ -26,13 +25,17 @@
 		<div class="fb-like" data-layout="button" data-action="recommend" data-show-faces="true" data-share="true"></div>
 
 		<h1 class="h1">Can I guess which composer this is from?</h1>	
-		<h2>
 			<div class="buttonHolder">
-				<button id="submitButton" class="btn btn-primary">Submit</button>
-				<input type="text" placeholder="Enter the music file...">
+			<a class="file-input-wrapper btn btn-primary">
+					<input type="file" value="audio" title="Select music file">
+			</a>
 			</div>
-		</h2>
-		
 		<footer class="footer">Made by: John Mooring, Jouella Fabe, Timmy Moore, Tucker Lein</footer>
+
+
+		<script type="text/javascript" src="./web_dev/js/bootstrap.file-input.js"></script>
+
+		<script>$(document).ready(function(){$('input[type=file]').bootstrapFileInput();});</script>
+
 	</body>
 </html>
