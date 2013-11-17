@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="./web_dev/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="./web_dev/css/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="./web_dev/css/main.css">
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="./web_dev/js/bootstrap.js"></script>
+		
+		<title>HackDuke project</title>
+
+	</head>
+
+	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "http://connect.facebook.net/en_US/all.js";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+		<div class="fb-like" data-layout="button" data-action="recommend" data-show-faces="true" data-share="true"></div>
+
+		<h1 class="h1">Can I guess which composer this is from?</h1>	
+			<div class="buttonHolder">
+			<a class="file-input-wrapper btn btn-primary">
+					<input type="file" value="audio" title="Select music file">
+			</a>
+			</div>
+		<footer class="footer">Made by: John Mooring, Jouella Fabe, Timmy Moore, Tucker Lein</footer>
+
+
+		<script type="text/javascript" src="./web_dev/js/bootstrap.file-input.js"></script>
+
+		<script>$(document).ready(function(){$('input[type=file]').bootstrapFileInput();});</script>
+
+	</body>
+</html>
