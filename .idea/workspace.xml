@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22af5ef-eeff-4a95-86c1-e6589db6f736" name="Default" comment="Initial commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jfugue-4.0.3-with-musicxml.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Clip.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FFT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LineOut.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jfugue_4_0_3_with_musicxml.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jlayer_1_0_1_1_javadoc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/nz_ac_waikato_cms_weka_weka_stable_3_6_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BS2.iml" afterPath="$PROJECT_DIR$/BS2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="f22af5ef-eeff-4a95-86c1-e6589db6f736" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BS2.iws" />
@@ -19,7 +9,7 @@
     <file path="/Main.java" changelist="f22af5ef-eeff-4a95-86c1-e6589db6f736" time="1384692310016" ignored="false" />
     <file path="/fragment.java" changelist="f22af5ef-eeff-4a95-86c1-e6589db6f736" time="1384657496933" ignored="false" />
     <file path="/a.dummy" changelist="f22af5ef-eeff-4a95-86c1-e6589db6f736" time="1384647814841" ignored="false" />
-    <file path="/Dummy.txt" changelist="f22af5ef-eeff-4a95-86c1-e6589db6f736" time="1384660334068" ignored="false" />
+    <file path="/Dummy.txt" changelist="f22af5ef-eeff-4a95-86c1-e6589db6f736" time="1384695373780" ignored="false" />
     <file path="/MFW.java" changelist="f22af5ef-eeff-4a95-86c1-e6589db6f736" time="1384677334451" ignored="false" />
     <file path="/Clip.java" changelist="f22af5ef-eeff-4a95-86c1-e6589db6f736" time="1384679762705" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -434,7 +424,11 @@
       <created>1384660336280</created>
       <updated>1384660336280</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="stuff">
+      <created>1384695379723</created>
+      <updated>1384695379723</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -506,7 +500,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Octave wraparound extracted to constant" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -526,6 +520,7 @@
     <MESSAGE value="Arg support for dimensionality" />
     <MESSAGE value="arff header parameters" />
     <MESSAGE value="Octave wraparound extracted to constant" />
+    <MESSAGE value="stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
